@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.univreims.l3info.construction_automobile.domain.model;
+
+/**
+ *
+ * @author çpc
+ */
+public class Moteur {
+    
+    private int numMoteur;
+    private double puissanceMoteur;
+    private Carburation carburant = Carburation.ESSENCE; 
+
+    public int getNumMoteur() {
+        return numMoteur;
+    }
+
+    public void setNumMoteur(int numMoteur) {
+        this.numMoteur = numMoteur;
+    }
+
+    public double getPuissanceMoteur() {
+        return puissanceMoteur;
+    }
+
+    public void setPuissanceMoteur(double puissanceMoteur) {
+        this.puissanceMoteur = puissanceMoteur;
+    }
+
+    public Carburation getCarburant() {
+        return carburant;
+    }
+
+    public void setCarburant(Carburation carburant) {
+        this.carburant = carburant;
+    }
+    
+    
+    
+}
