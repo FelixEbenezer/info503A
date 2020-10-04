@@ -95,6 +95,7 @@ public class Voiture {
     public void setGps(Boolean gps) {
         this.gps = gps;
     }
+    
 
     @Override
     public String toString() {
