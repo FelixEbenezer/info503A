@@ -5,7 +5,6 @@
  */
 package com.univreims.l3info.construction_automobile.domain.model;
 
-import java.util.Date;
 
 /**
  *

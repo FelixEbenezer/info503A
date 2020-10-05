@@ -1,0 +1,33 @@
+{"contacts": [{
+   "idUsine": 1,
+   "parkings": [
+      {
+         "idParking": 1,
+         "placesParking": [
+            {
+               "range": "B",
+               "numRange": 2
+            },
+            {
+               "range": "A",
+               "numRange": 1
+            }
+         ],
+         "voitures": []
+      },
+      {
+         "idParking": 2,
+         "placesParking": [
+            {
+               "range": "B",
+               "numRange": 2
+            },
+            {
+               "range": "A",
+               "numRange": 1
+            }
+         ],
+         "voitures": []
+      }
+   ]
+}]}

@@ -16,6 +16,12 @@ public class Usine {
     private int idUsine;
     private List<Parking> parkings; 
 
+    public void setIdUsine(int idUsine) {
+        this.idUsine = idUsine;
+    }
+
+    
+    
     public int getIdUsine() {
         return idUsine;
     }
