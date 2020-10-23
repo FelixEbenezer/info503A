@@ -13,6 +13,13 @@ public class Modele {
 
  private int idModele; 
  private String description;
+ 
+ public Modele() {}
+ 
+ public Modele (int idModele, String description) {
+  this.idModele=idModele;
+  this.description=description;
+ }
 
     public int getIdModele() {
         return idModele;

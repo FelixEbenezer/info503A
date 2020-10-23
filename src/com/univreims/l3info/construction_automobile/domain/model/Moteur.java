@@ -14,6 +14,14 @@ public class Moteur {
     private int numMoteur;
     private double puissanceMoteur;
     private Carburation carburant = Carburation.ESSENCE; 
+    
+    public Moteur () {}
+    
+    public Moteur (int numMoteur, double puissanceMoteur, Carburation carburant) {
+     this.numMoteur=numMoteur;
+     this.puissanceMoteur=puissanceMoteur;
+     this.carburant=carburant; 
+    }
 
     public int getNumMoteur() {
         return numMoteur;

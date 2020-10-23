@@ -22,7 +22,26 @@ public class Voiture {
     private Boolean vitreElectrique = false;
     private Boolean radar = false;
     private Boolean gps = false;
-
+    
+    public Voiture () {}
+    
+    public Voiture (int ideVoiture, String niuVoiture, String couleurVoiture, String dateFabricationVoiture,
+            Moteur numeroMoteur, Modele modeleVoiture, Boolean vitreElectrique, Boolean radar, Boolean gps)
+    {
+        this.idVoiture=ideVoiture;
+        this.niuVoiture=niuVoiture;
+        this.couleurVoiture=couleurVoiture;
+        this.dateFabricationVoiture=dateFabricationVoiture;
+        this.numeroMoteur=numeroMoteur;
+        this.modeleVoiture=modeleVoiture;
+        this.vitreElectrique=vitreElectrique;
+        this.radar=radar;
+        this.gps=gps;
+    }
+    
+  //  private Set<PlaceParking> placeParkings = new HashSet<>();
+ //   private PlaceParking placeParking = new PlaceParking();
+    
     public int getIdVoiture() {
         return idVoiture;
     }
@@ -94,6 +113,17 @@ public class Voiture {
     public void setGps(Boolean gps) {
         this.gps = gps;
     }
+
+    /*
+    public PlaceParking getPlaceParking() {
+        return placeParking;
+    }
+
+    public void setPlaceParking(PlaceParking placeParking) {
+        this.placeParking = placeParking;
+    }*/
+    
+    
     
 
     @Override
@@ -102,7 +132,11 @@ public class Voiture {
                 vitreElectrique + radar + gps + "";        
     }
     
-  
+    public Voiture ajouterVoiture() {
+    return this;
+    }
+    
+    
     
     
 }

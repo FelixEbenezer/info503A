@@ -15,8 +15,14 @@ public class Parking {
     
     private int idParking;
     private List<PlaceParking> placesParking;
-    private List<Voiture> voitures; 
+//    private List<Voiture> voitures; 
 
+    public Parking() {}
+    public Parking(int idParking, List<PlaceParking> placesParking) {
+    this.idParking=idParking;
+    this.placesParking=placesParking;
+    }
+    
     public int getIdParking() {
         return idParking;
     }
@@ -33,7 +39,7 @@ public class Parking {
         this.placesParking = placesParking;
     }
 
-    public List<Voiture> getVoitures() {
+  /*  public List<Voiture> getVoitures() {
         return voitures;
     }
 
@@ -41,6 +47,12 @@ public class Parking {
         this.voitures = voitures;
     }
 
+    */
+
+    @Override
+    public String toString() {
+        return "Le parking de id " + idParking + "avec les places parking " + placesParking.toString();
+    }
     
     
     

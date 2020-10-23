@@ -5,15 +5,8 @@
  */
 package com.univreims.l3info.construction_automobile.domain.lire;
 
-import com.univreims.l3info.construction_automobile.domain.model.Client;
-import com.univreims.l3info.construction_automobile.domain.model.Modele;
-import com.univreims.l3info.construction_automobile.domain.model.Moteur;
 import com.univreims.l3info.construction_automobile.domain.model.Parking;
-import com.univreims.l3info.construction_automobile.domain.model.PlaceParking;
 import com.univreims.l3info.construction_automobile.domain.model.Usine;
-import com.univreims.l3info.construction_automobile.domain.model.Voiture;
-import com.univreims.l3info.mediatheque1.Auteur;
-import com.univreims.l3info.mediatheque1.Livre;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -59,6 +52,19 @@ public class UsineLecture {
        
        JSONArray tableau = objet.getJSONArray("contacts");
        List<Parking> parkings = new ArrayList<>();
+   
+    //   List<PlaceParking> places = new ArrayList<>(); 
+       
+       /*    parkings.stream()
+               .map(c -> c.getPlacesParking().stream()
+                                             .map(s -> s.getVoitures())
+                                            // .collect(collectors.toList())
+                                            // .findAny())
+               .collect(Collectors.toList());
+       */
+       
+    //   parkings.forEach(setParkings::places);
+       
        
        Usine[] p=new Usine[tableau.length()];
        for(int i = 0; i < tableau.length(); i++) {

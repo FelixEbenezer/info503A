@@ -5,21 +5,10 @@
  */
 package com.univreims.l3info.construction_automobile.domain.ecrire;
 
-import com.univreims.l3info.construction_automobile.domain.model.Carburation;
-import com.univreims.l3info.construction_automobile.domain.model.Client;
-import com.univreims.l3info.construction_automobile.domain.model.Modele;
-import com.univreims.l3info.construction_automobile.domain.model.Moteur;
-import com.univreims.l3info.construction_automobile.domain.model.Parking;
-import com.univreims.l3info.construction_automobile.domain.model.PlaceParking;
+import com.univreims.l3info.construction_automobile.domain.factory.usine.UsineFactory;
 import com.univreims.l3info.construction_automobile.domain.model.Usine;
-import com.univreims.l3info.construction_automobile.domain.model.Voiture;
-import com.univreims.l3info.mediatheque1.Auteur;
-import com.univreims.l3info.mediatheque1.Livre;
-import com.univreims.l3info.mediatheque1.Mediatheque;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,44 +29,16 @@ public class UsineEcriture {
             System.err.println("\toù 'fichier.json' est le nom du fichier dans lequel sauvegarder");
             System.exit(0);
         }
-
-        //PlaceParking
-        PlaceParking placeParking1 = new PlaceParking();
-        placeParking1.setNumRange(1);
-        placeParking1.setRange("A");
         
-        PlaceParking placeParking2 = new PlaceParking();
-        placeParking2.setNumRange(2);
-        placeParking2.setRange("B");
-    
-        //List Parking
-        Parking par1 = new Parking(); 
-        Parking par2 = new Parking();
-        par1.setIdParking(1);
-        par2.setIdParking(2);
+        UsineFactory usineFactory = new UsineFactory();
+        Usine usine1 = usineFactory.getUsine(1);
+        usine1 = usine1.creerUsine();
+        Usine usine2 = usineFactory.getUsine(2);
+        usine2 = usine2.creerUsine();
         
-        List<PlaceParking> placesParking = new ArrayList<>();
-        placesParking.add(placeParking2);
-        placesParking.add(placeParking1);
         
-        par1.setPlacesParking(placesParking);
-        par2.setPlacesParking(placesParking);
+        Usine p[] = { usine1, usine2 };
         
-        List<Voiture> voitures = new ArrayList<>();
-        par1.setVoitures(voitures);
-        par2.setVoitures(voitures);
-        
-        //Usine
-        Usine us1 = new Usine();
-        us1.setIdUsine(1);
-        
-        List<Parking> parkings = new ArrayList<>();
-        parkings.add(par1);
-        parkings.add(par2);
-        
-        us1.setParkings(parkings);
-        // Génération du JSON depuis un tableau d'objets
-        Usine p[] = { us1 };
         JSONObject objet = new JSONObject();
         
         // Ajout du tableau
@@ -120,9 +81,62 @@ public class UsineEcriture {
         }
         
         System.out.println("Le fichier '" + args[0] + "' a été généré.");
-        
+        System.out.println(usine1);
+        System.out.println("=====================================");
+        System.out.println(usine2.getParkings());
         
         }        
 
     
 }
+
+
+//ancien methode avant de creer usineFactory
+/*
+
+
+        Voiture voiture1 = new Voiture();
+        Voiture voiture2 = new Voiture(); 
+
+
+          //PlaceParking
+        PlaceParking placeParking1 = new PlaceParking();
+        placeParking1.setNumRange(1);
+        placeParking1.setRange("A");
+        placeParking1.setVoiture(voiture1);
+        
+        PlaceParking placeParking2 = new PlaceParking();
+        placeParking2.setNumRange(2);
+        placeParking2.setRange("B");
+        placeParking2.setVoiture(voiture2);
+        
+        List<PlaceParking> placesParking = new ArrayList<>();
+        placesParking.add(placeParking2);
+        placesParking.add(placeParking1);
+    
+        //List Parking
+        Parking par1 = new Parking(); 
+        Parking par2 = new Parking();
+        par1.setIdParking(1);
+        par2.setIdParking(2);
+        par1.setPlacesParking(placesParking);
+        
+       
+        
+        //Usine
+        Usine us1 = new Usine();
+        us1.setIdUsine(1);
+        
+        List<Parking> parkings = new ArrayList<>();
+        parkings.add(par1);
+        parkings.add(par2);
+        
+        us1.setParkings(parkings);
+        
+   /*     parkings.stream()
+               .map(c -> c.getVoitures())
+               .collect(Collectors.toList());
+        // Génération du JSON depuis un tableau d'objets
+     */
+
+

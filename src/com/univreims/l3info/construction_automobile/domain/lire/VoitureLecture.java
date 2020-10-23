@@ -5,13 +5,9 @@
  */
 package com.univreims.l3info.construction_automobile.domain.lire;
 
-import com.univreims.l3info.construction_automobile.domain.model.Client;
 import com.univreims.l3info.construction_automobile.domain.model.Modele;
 import com.univreims.l3info.construction_automobile.domain.model.Moteur;
-import com.univreims.l3info.construction_automobile.domain.model.PlaceParking;
 import com.univreims.l3info.construction_automobile.domain.model.Voiture;
-import com.univreims.l3info.mediatheque1.Auteur;
-import com.univreims.l3info.mediatheque1.Livre;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

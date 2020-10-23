@@ -1,0 +1,12 @@
+{"contacts": [
+   {
+      "password": "123",
+      "idUtilisateur": 1,
+      "login": "nganga"
+   },
+   {
+      "password": "123",
+      "idUtilisateur": 2,
+      "login": "felix"
+   }
+]}

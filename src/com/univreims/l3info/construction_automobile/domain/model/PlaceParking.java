@@ -5,6 +5,7 @@
  */
 package com.univreims.l3info.construction_automobile.domain.model;
 
+
 /**
  *
  * @author çpc
@@ -12,7 +13,17 @@ package com.univreims.l3info.construction_automobile.domain.model;
 public class PlaceParking {
 
 private int numRange;
-private String range; 
+private String range;
+private Voiture voiture; 
+
+public PlaceParking() {}
+
+public PlaceParking(int numRange, String range, Voiture voiture) {
+    this.numRange=numRange;
+    this.range=range;
+    this.voiture=voiture; 
+}
+//private List<Voiture> voitures = new ArrayList<>();
 
     public int getNumRange() {
         return numRange;
@@ -29,6 +40,32 @@ private String range;
     public void setRange(String range) {
         this.range = range;
     }
+    
+    
 
+ /*   public List<Voiture> getVoitures() {
+        return voitures;
+    }
+
+    public void setVoitures(List<Voiture> voitures) {
+        this.voitures = voitures;
+    }
+*/
+
+    public Voiture getVoiture() {
+        return voiture;
+    }
+
+    public void setVoiture(Voiture voiture) {
+        this.voiture = voiture;
+    }
+
+    @Override
+    public String toString() {
+        return "La place parking numero " + numRange + "de " + range +"a la " + voiture.getNiuVoiture();
+    }
+    
+    
+    
 
 }
