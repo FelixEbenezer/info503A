@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * Classe correspondant au handler sur le contexte 'index.html'.
  * @author Cyril Rabat
  */
-class LoginHandler1 implements HttpHandler {
+class LoginHandlerBackup implements HttpHandler {
 
      public static final Logger logger = Logger.getLogger("");
      

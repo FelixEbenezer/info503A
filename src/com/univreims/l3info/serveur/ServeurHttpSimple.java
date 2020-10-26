@@ -3,7 +3,7 @@ package com.univreims.l3info.serveur;
 
 import java.io.IOException;
 import com.sun.net.httpserver.HttpServer;
-import com.sun.net.httpserver.HttpContext;
+import static com.univreims.l3info.serveur.LoginHandler1.logger;
 import java.net.InetSocketAddress;
 
 /**
@@ -17,7 +17,7 @@ public class ServeurHttpSimple {
     public static void main(String[] args) {    
         HttpServer serveur = null;
         try {
-            serveur = HttpServer.create(new InetSocketAddress(8087), 0);
+            serveur = HttpServer.create(new InetSocketAddress(8083), 0);
         } catch(IOException e) {
             System.err.println("Erreur lors de la création du serveur " + e);
             System.exit(0);
@@ -26,13 +26,15 @@ public class ServeurHttpSimple {
      //   serveur.createContext("/index", new AccueilSimpleHandler());
        serveur.createContext("/index", new IndexHandler());
        serveur.createContext("/login", new LoginHandler());
-       serveur.createContext("/login1", new LoginHandler1());
+       serveur.createContext("/inscription", new InscriptionHandler());
       // serveur.createContext("/index", new AcueilHandler());
        
         serveur.setExecutor(null);
         serveur.start();
 
         System.out.println("Serveur démarré. Pressez CRTL+C pour arrêter.");
+        
+     //    logger.info("Recuperation des donnees en Post avec query");
     }
 
 }

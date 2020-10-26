@@ -25,11 +25,13 @@ class IndexHandler implements HttpHandler {
                          "</head>" +
                          "<body>" +
                          "<h1>Bienvenue sur la page d'accueil du TP - INDEX</h1>" +                
-                "<form method=\"get\" action=\"http://localhost:8087/login\">" +
+                "<form method=\"get\" action=\"http://localhost:8083/login\">" +
       "<label>Cliquer sur le bouton ci-dessous pour vous connecter</label>" + "</br>" +
       "<button>Se connecter</button>"+ "</br>" +
-      "<button>S´inscrire</button>"+ 
-      "</form>";
+      "</form>" +
+      "<form method=\"post\" action=\"http://localhost:8083/inscription\">" +
+      "<button>S´inscrire</button>"+
+      "</form>" ;
         
 
         // Récupération des données
@@ -53,19 +55,6 @@ class IndexHandler implements HttpHandler {
             System.exit(0);
         }
         
-        // Affichage des données
-  /*      reponse += "<p>Données en POST : ";
-        if(query == null)
-            reponse += "<b>Aucune</b></p>";
-        else {
-            try {
-                query = URLDecoder.decode(query, "UTF-8");
-            } catch(UnsupportedEncodingException e) {
-                query = "";
-            }            
-            reponse += "<b>" + query + "</b></p>";
-        } */            
-
         // Envoi de l'en-tête Http
         try {
             Headers h = t.getResponseHeaders();

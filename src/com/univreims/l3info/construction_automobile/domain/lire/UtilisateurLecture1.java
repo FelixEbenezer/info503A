@@ -16,20 +16,12 @@ import org.json.JSONObject;
  *
  * @author çpc
  */
-public class UtilisateurLecture {
+public class UtilisateurLecture1 {
 
    public static void main(String[] args ) {
       
         
-        // Vérification des arguments
-        if(args.length != 1) {
-            System.err.println("Erreur : vous devez spécifier le nom du fichier JSON.");
-            System.err.println();            
-            System.err.println("Usage : java LecteurJSON fichier.json");
-            System.err.println("\toù 'fichier.json' est le nom du fichier à ouvrir");
-            System.exit(0);
-        }
-        
+
         // Récupération de la chaîne JSON depuis le fichier
         String json = "";
         try {
@@ -37,7 +29,7 @@ public class UtilisateurLecture {
           //byte[] contenu = Files.readAllBytes(Paths.get(args[0]));
           json = new String(contenu);        
         } catch(IOException e) {
-            System.err.println("Erreur lors de la lecture du fichier '" + args[0] + "'");
+            System.err.println("Erreur lors de la lecture du fichier '");
             System.exit(0);
         } 
         

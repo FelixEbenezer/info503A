@@ -40,5 +40,12 @@ private String password;
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "L utilisateur de id: "+ idUtilisateur + " " +"a comme nom: " + login + " " + "passord: " + password;
+    }
+    
+    
+
 
 }
